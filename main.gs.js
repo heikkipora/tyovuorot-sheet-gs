@@ -28,15 +28,6 @@ function hoursInCell(input, index, values) {
   }
   
   return input;
-//  return parseRange(input);
-}
-
-function parseRange(input) {
-  var total = 0;
-  input.split("/").map(valueToPeriod).forEach(function(period) {
-    total += period.end - period.start;
-  });
-  return total;
 }
 
 function isSixthVacationInRow(index, values) {
