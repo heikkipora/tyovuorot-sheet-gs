@@ -18,30 +18,6 @@ function HOURS(input) {
   }
 }
 
-function hoursInCell(input, index, values) {
-  if (isEmpty(input)) {
-    return;
-  } else if (isVacation(input)) {
-    return isSixthVacationInRow(index, values) ? 0 : 7.4;
-  } else if (isZeroVacation(input)) {
-    return 0;
-  }
-  
-  return input;
-}
-
-function isSixthVacationInRow(index, values) {
-  if (index >= 5) {
-    for (var i = index - 5; i < index; i++) {
-      if (values[index] != "VL") {
-        return false;
-      }
-    }
-    return true;
-  }
-  return false;
-}
-
 function isRange(input) {
   return !isEmpty(input) && !isVacation(input) && !isZeroVacation(input);
 }
