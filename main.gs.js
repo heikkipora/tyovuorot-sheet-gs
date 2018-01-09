@@ -5,6 +5,8 @@ function HOURS(input) {
     if (isEmpty(input)) {
       return;
     } else if (isVacation(input)) {
+      return 7.5;
+    } else if (isOldVacation(input)) {
       return 7.4;
     } else if (isZeroVacation(input)) {
       return 0;
@@ -19,7 +21,7 @@ function HOURS(input) {
 }
 
 function isRange(input) {
-  return !isEmpty(input) && !isVacation(input) && !isZeroVacation(input);
+  return !(isEmpty(input) || isVacation(input) || isZeroVacation(input) || isOldVacation(input));
 }
 
 function WORK_DAYS(range) {
@@ -63,11 +65,15 @@ function valueToPeriod(value) {
 }
 
 function isVacation(value) {
-  return /VL|JP/i.test(value);
+  return value === 'L' || value === 'VV'
+}
+
+function isOldVacation(value) {
+  return value === 'VL'
 }
 
 function isZeroVacation(value) {
-  return /L|TS/i.test(value);
+  return value === 'TS'
 }
 
 function isEmpty(value) {
