@@ -65,7 +65,7 @@ function valueToPeriod(value) {
 }
 
 function isVacation(value) {
-  return value === 'L' || value === 'VV'
+  return value === 'VV'
 }
 
 function isOldVacation(value) {
@@ -73,7 +73,7 @@ function isOldVacation(value) {
 }
 
 function isZeroVacation(value) {
-  return value === 'TS'
+  return value === 'TS' || value === 'L'
 }
 
 function isEmpty(value) {
