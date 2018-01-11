@@ -19,7 +19,7 @@ function HOURS(input) {
 }
 
 function isRange(input) {
-  return !(isEmpty(input) || isVacation(input) || isZeroVacation(input);
+  return !(isEmpty(input) || isVacation(input) || isZeroVacation(input));
 }
 
 function WORK_DAYS(range) {
